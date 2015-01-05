@@ -7,14 +7,20 @@
 #  Copyright (c) 2014年 Razer. All rights reserved.
 
 #
-#@param 1 format index RGBA8888
-#@param 2 output plist path
-#@param 3 output image path
-#@param 4 plist prefix aa/aa.png
-#@param 5 input image path
-#
-formats=("RGBA8888" "RGBA4444" "RGB565")
-format=${formats[$1]}
+#@param 1 input  path
+#@param 2 output  path
+#@param 3 format  RGBA8888
+
+#formats=("RGBA8888" "RGBA4444" "RGB565")
+format=$3
+folder=${1##*/}
+outputsheet=$2/$folder.png
+outputdata=$2/$folder.plist
+echo $outputsheet
+echo $outputdata
+echo folder=$folder
+echo $format
+
 tp="/usr/local/bin/TexturePacker"
 arguments="\
 --smart-update \
@@ -26,10 +32,10 @@ arguments="\
 --shape-padding 2 \
 --border-padding 2 \
 --opt $format \
---data $2 \
---sheet $3 \
---replace ^=$4/ \
-$5/*.png"
+--data $outputdata \
+--sheet $outputsheet \
+--replace ^=$folder/ \
+$1/*.png"
 
 echo $arguments
 $tp $arguments
