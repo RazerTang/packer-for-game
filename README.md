@@ -1,3 +1,5 @@
+this script is used for packing png,export ccbi,convert js to jsc,submit files to svn,create icons from a large icon png  
+  
 1.if need you should copy exec files into /usr/local/bin,as follow  
 sudo cp ./exec/pngquant /usr/local/bin  
 sudo cp ./exec/jsbcc /usr/local/bin  
