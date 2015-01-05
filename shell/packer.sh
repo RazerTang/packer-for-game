@@ -35,22 +35,22 @@ do
 	esac
 done
 
-echo func=$g_func
-echo input=$g_input
-echo output=$g_output
-echo foramt=$g_format
+#echo func=$g_func
+#echo input=$g_input
+#echo output=$g_output
+#echo foramt=$g_format
 
-if [ $g_func = 1 ]; then 
+if [[ $g_func = 1 ]]; then 
 	sh ./tools/png8.sh $g_input $g_output
-elif [ $g_func = 2 ]; then
+elif [[ $g_func = 2 ]]; then
 	sh ./tools/jsc.sh $g_input $g_output
-elif [ $g_func = 3 ]; then
+elif [[ $g_func = 3 ]]; then
 	sh ./tools/imagepacker.sh $g_input $g_output $g_format
-elif [ $g_func = 4 ]; then
+elif [[ $g_func = 4 ]]; then
 	sh ./tools/icon.sh $g_input $g_output
-elif [ $g_func = 5 ]; then
+elif [[ $g_func = 5 ]]; then
 	sh ./tools/ccbi.sh $g_input $g_output
-elif [ $g_func = 6 ]; then
+elif [[ $g_func = 6 ]]; then
 	sh ./tools/svnci.sh $g_input 
 
 
